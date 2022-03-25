@@ -1,0 +1,92 @@
+
+#app {
+    height: 100vw;
+    background-image: linear-gradient(to right, rgb(35, 134, 201,0.3), rgb(35, 134, 201,.85));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar-brand {
+    color: burlywood;
+}
+.modalTitle {
+    color:red;
+    font-size: 32px !important;
+    padding: 15px;
+}
+.modalBody {
+    margin: 20px 20px 20px 20px;
+}
+.modal {
+    font-size: 18px;
+    margin-top: 20px;   
+}
+.about {
+    height: 100vw;
+    color: #5C5F58;/*#591C0B; */
+    width: 75%;
+    margin: auto;
+}
+.about-h1 {
+    color: #591C0B;
+    font-weight: bold;
+}
+.about-header {
+    text-align: center;
+
+}
+.about-text {
+    font-size: 18px;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+}
+.question-text { /*from About*/
+    color: #B73225;
+}
+.about-paragraph1 {
+    width: 70% !important;
+    margin: auto;
+    margin-bottom: 30px;
+}
+#login, #register {
+    max-width: 75%;
+    padding: 20px 40px 70px 40px;
+    margin-top: 40px;
+    background-color: transparent;
+}
+#registerForm {
+    padding-bottom: 70px;
+    margin: auto;
+}
+#register {
+    padding: 30px 0 0 30px;
+}
+#registerForm {
+    max-width: 300px;
+    width: 80%;
+    min-width: 150px;
+}
+.register-inputs {
+    padding-bottom: 20px;
+}
+.register-text {
+    text-align: center;
+    list-style-position: inside;
+    color: #004E7C;
+    margin: 10px 0 40px 0;
+}
+li {
+    text-align: start;
+    margin-left:25%;
+    font-size: 18px;
+}
+h1 {
+    color: #5C5F58;
+}
+h2 {
+    color: #591C0B;
+    margin-bottom: 20px !important; 
+}
+#submitRegister, #submitLogin, #submitTryAgain {
+    width: auto;
+    margin: auto;
+    margin-top: 16px;
+}
