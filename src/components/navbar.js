@@ -30,7 +30,7 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink className='nav-link' to='/signin'>
+                            <NavLink className='nav-link' to='/login'>
                                 Sign in
                             </NavLink>
                         </li>

@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import Disclaimer from './components/disclaimer';
 import About from './components/About';
 import Registration from './components/register';
+import Login from './components/login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/' element={<About />} />
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Registration />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </div>
       </Router>

@@ -1,11 +1,16 @@
-
+body {
+    overflow: hidden ;
+}
 #app {
     height: 100vw;
-    background-image: linear-gradient(to right, rgb(35, 134, 201,0.3), rgb(35, 134, 201,.85));
+    background-image: linear-gradient(to right, #DCE1E3, rgb(35, 134, 201,.75));
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .navbar-brand {
-    color: burlywood;
+    color: #DCE1E3;
+}
+.nav-link {
+    color:   rgb(35, 134, 201) !important;
 }
 .modalTitle {
     color:red;
@@ -47,31 +52,73 @@
     margin-bottom: 30px;
 }
 #login, #register {
-    max-width: 75%;
-    padding: 20px 40px 70px 40px;
     margin-top: 40px;
     background-color: transparent;
 }
 #registerForm {
-    padding-bottom: 70px;
+    background-image: linear-gradient(90deg,#5C5F58 100%, #00FFFF 0%);
+    height: 420px;
+    border-radius: 30px;
     margin: auto;
+    max-width: 500px;
+    min-width: 350px;
+    margin-bottom: 10px !important;
 }
-#register {
-    padding: 30px 0 0 30px;
+#loginForm{
+    background-image: linear-gradient(90deg,#004E7C 100%, #00FFFF 0%);
+    height: 420px;
+    border-radius: 30px;
+    margin: auto;
+    max-width: 500px;
+    min-width: 350px;
+    margin-bottom: 10px !important;
 }
-#registerForm {
-    max-width: 300px;
-    width: 80%;
-    min-width: 150px;
+.register-inputs, #login {
+    color: #DCE1E3;
+    max-width: 300px !important;
+    text-align: center;
+    padding: 5px 0px 10px 0px ;
+    margin-bottom: 20px;
+    margin-top: 20px !important;
+    
 }
-.register-inputs {
-    padding-bottom: 20px;
+#login {
+    margin-top: 40px !important;
+}
+.login-inputs {
+    padding: 10px 0 10px 0;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: #DCE1E3;
+}
+.login-inputs-row {
+    margin-bottom: 20px !important;
+}
+.login-header {
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+    color: #B73225;
+}
+dialog {
+    max-width: 220px !important;
+    max-height: 50px !important;
+    text-align: center;
+    line-height: 0px;
+    color: red;
+    border: 6px double red;
+}
+input {
+    background-color: #DCE1E3;
+}
+.row {
+    display: flex;
+    justify-content: center;
 }
 .register-text {
     text-align: center;
     list-style-position: inside;
     color: #004E7C;
-    margin: 10px 0 40px 0;
+    margin: 10px 0 30px 0;
 }
 li {
     text-align: start;
@@ -89,4 +136,7 @@ h2 {
     width: auto;
     margin: auto;
     margin-top: 16px;
+}
+#nameDiv, #emailDiv, #passwordDiv {
+    border-radius: 20px;
 }
