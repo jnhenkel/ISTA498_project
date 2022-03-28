@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {Navbar} from 'react-bootstrap';
 
-
-const Navbar = () => {
+const Navigation = () => {
     return (
         <div className='navigation'>
-            <nav className='navbar navbar-expand bg-dark'>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <div className='container-fluid'>
                     <a class="navbar-brand" href="/">The Art Factory</a>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
                     <ul id='navBar' className='navbar-nav ml-auto' >
                         <li className='nav-item mx-2'>
                             <NavLink className='nav-link' to='/about'>
@@ -35,11 +37,12 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                     </ul>
+                    </Navbar.Collapse>
                 </div>
-            </nav>
+            </Navbar>
 
         </div>
     )
 }
 
-export default Navbar;
+export default Navigation;

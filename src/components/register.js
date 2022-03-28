@@ -17,10 +17,8 @@ const Registration = () => {
             console.log(users);
             alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
             navigate('/login');
-            /*event.preventDefault(); */
         }
     }
-
     let handleEmail = (event) => {
         let val = event.target.value;
         const nameDiv = document.getElementById('emailDiv');
@@ -50,7 +48,7 @@ const Registration = () => {
             }
             /* this regex also prevents multiple @ symbols being used in addition to email validation. This regex will return an object if value is true email format. */
             if (!value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                alert('email problem');
+                alert('Invalid email');
                 return false;
             }
         } else if (type == 'name') {
@@ -62,7 +60,7 @@ const Registration = () => {
                 return false;
             }
             if (value.match(/[0-9]/)) {
-                alert('name problem');
+                alert('Invalid name');
                 return false;
             }
         } else if (type == 'password') {
@@ -74,7 +72,7 @@ const Registration = () => {
                 return false;
             }
             if (value.length < 5) {
-                alert('password problem');
+                alert('Password length is too short');
                 return false;
             }
         }

@@ -9,6 +9,9 @@ body {
 .navbar-brand {
     color: #DCE1E3;
 }
+#navBar {
+    margin-left: auto;
+}
 .nav-link {
     color:   rgb(35, 134, 201) !important;
 }
