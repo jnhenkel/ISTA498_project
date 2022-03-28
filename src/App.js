@@ -6,19 +6,26 @@ import Disclaimer from './components/disclaimer';
 import About from './components/About';
 import Registration from './components/register';
 import Login from './components/login';
+import {useState} from 'react';
 
 function App() {
+  const [user, setUser] = useState(undefined);
+
+let handleLogin = (email) => {
+  setUser(email);
+}
+
   return (
     <div id="app">
       <Router>
         <Disclaimer />
         <div id="blur">
-          <Navigation />
+          <Navigation user={user} />
           <Routes>
             <Route path='/' element={<About />} />
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Registration />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/login' element={<Login userLoggedIn={handleLogin} />} />
           </Routes>
         </div>
       </Router>

@@ -24,12 +24,13 @@ const Login = (props) => {
         );
         if (search) {
             alert('Login successful');
-            /*props.userLoggedIn(email);
-            navigate('/index'); */
+            props.userLoggedIn(email);
+            navigate('/index');
         } else {
             alert('Invalid credentials. Please try again.');
         }
         event.preventDefault();
+        navigate('/about');
     }
 
     return (
