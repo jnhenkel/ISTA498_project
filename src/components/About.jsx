@@ -1,8 +1,13 @@
 import React from "react";
+<head>
+<script type="text/javascript" src="./processing.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+</head>
 
 function About() {
   return (
     <div className="about">
+      <canvas data-processing-sources="../data/test.pde"></canvas>
       <div class="container">
         <div class="row align-items-center m-5 about-header">
           <div class="col">
