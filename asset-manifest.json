@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ISTA498_project/static/css/main.53214e5f.css",
+    "main.js": "/ISTA498_project/static/js/main.1629e543.js",
+    "index.html": "/ISTA498_project/index.html",
+    "main.53214e5f.css.map": "/ISTA498_project/static/css/main.53214e5f.css.map",
+    "main.1629e543.js.map": "/ISTA498_project/static/js/main.1629e543.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53214e5f.css",
+    "static/js/main.1629e543.js"
+  ]
+}
