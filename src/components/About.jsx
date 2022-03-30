@@ -7,7 +7,6 @@ import React from "react";
 function About() {
   return (
     <div className="about">
-      <canvas data-processing-sources="../data/test.pde"></canvas>
       <div class="container">
         <div class="row align-items-center m-5 about-header">
           <div class="col">
@@ -29,6 +28,7 @@ function About() {
           </div>
         </div>
       </div>
+      <canvas data-processing-sources="../test.pde"></canvas>
     </div>
   );
 }

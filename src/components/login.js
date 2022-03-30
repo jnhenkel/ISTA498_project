@@ -30,7 +30,6 @@ const Login = (props) => {
             alert('Invalid credentials. Please try again.');
         }
         event.preventDefault();
-        navigate('/about');
     }
 
     return (
