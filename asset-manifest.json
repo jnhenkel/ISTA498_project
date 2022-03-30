@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ISTA498_project/static/css/main.53214e5f.css",
-    "main.js": "/ISTA498_project/static/js/main.b4650dac.js",
+    "main.js": "/ISTA498_project/static/js/main.9aca4852.js",
     "index.html": "/ISTA498_project/index.html",
     "main.53214e5f.css.map": "/ISTA498_project/static/css/main.53214e5f.css.map",
-    "main.b4650dac.js.map": "/ISTA498_project/static/js/main.b4650dac.js.map"
+    "main.9aca4852.js.map": "/ISTA498_project/static/js/main.9aca4852.js.map"
   },
   "entrypoints": [
     "static/css/main.53214e5f.css",
-    "static/js/main.b4650dac.js"
+    "static/js/main.9aca4852.js"
   ]
 }
