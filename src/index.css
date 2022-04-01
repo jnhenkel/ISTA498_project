@@ -1,3 +1,13 @@
+/*
+* Color theme:
+* #B73225 - Red Highlight
+* #004E7C - Blue Minded
+* #591COB - Maroon 6
+* #5C5F58 - Grey Water
+* #DCE1E3 - Lighter Grey
+*/
+
+
 body {
     overflow: hidden ;
 }
@@ -142,4 +152,40 @@ h2 {
 }
 #nameDiv, #emailDiv, #passwordDiv {
     border-radius: 20px;
+}
+.home {
+    text-align: center;
+    background-image: linear-gradient(90deg,#B73225 100%, #00FFFF 0%);
+    height: 420px;
+    border-radius: 30px;
+    margin: 40px 0 10px 0;
+    max-width: 500px;
+    min-width: 350px;
+}
+.homeText {
+    font-size: 32px;
+    margin: 20px 0 20px 0 !important;
+}
+.homeForm {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    color: #004E7C;
+    margin: 30px 0 20px 0;
+    
+}
+.homeFormControl {
+    color: #DCE1E3;
+    max-width: 300px !important;
+    
+    text-align: start;
+    padding: 5px 0px 10px 0px ;
+    margin-bottom: 20px;
+    margin-top: 20px !important;
+    margin: auto;
+}
+.drawFrame {
+    display:block;
+    margin: auto;
+    margin-top: 30px;
 }

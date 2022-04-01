@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 import '../index.css';
 
 function Disclaimer() {
