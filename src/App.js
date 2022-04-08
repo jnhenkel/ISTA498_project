@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Draw from './components/draw';
 import Home from './components/home';
+import Services from './components/services';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path='/signup' element={<Registration />} />
             <Route path='/login' element={<Login userLoggedIn={handleLogin} />} />
             <Route path='/discover' element={<Draw />} />
+            <Route path='/services' element={<Services />} />
           </Routes>
         </div>
       </Router>
