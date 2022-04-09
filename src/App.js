@@ -35,7 +35,7 @@ function App() {
           <Navigation user={user} />
           <Disclaimer />
           <Routes>
-            <Route path='/ISTA498_project' element={<Home />} />
+            <Route path='/art-factory' element={<Home />} />
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Registration />} />
