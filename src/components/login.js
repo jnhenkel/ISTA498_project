@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
-
+import store from '../data/store';
 
 
 const Login = (props) => {
@@ -19,9 +19,7 @@ const Login = (props) => {
     }
 
     let handleSubmit = (event) => {
-        let search = users.find(db =>
-            (email.toLowerCase() == db.email.toLowerCase() || email.toLowerCase() == db.email.toLowerCase()) && password == db.password
-        );
+        let search = store.findUserInfo(email, password);
         if (search) {
             alert('Login successful');
             props.userLoggedIn(email);

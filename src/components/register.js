@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
-
+import store from '../data/store';
 
 const Registration = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ const Registration = () => {
 
     let handleSubmit = (event) => {
         if (validateInputs(email, 'email') && validateInputs(firstName, 'name') && validateInputs(password, 'password')) {
-            users.push({ 'firstName': firstName, 'email': email, 'password': password });
+            store.addCustomer(firstName, email, password );
             console.log(users);
             alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
             navigate('/login');
