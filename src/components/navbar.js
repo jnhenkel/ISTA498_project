@@ -7,7 +7,7 @@ const Navigation = (props) => {
         <div className='navigation'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <div className='container-fluid'>
-                    <a class="navbar-brand" href="/">The Art Factory</a>
+                    <a class="navbar-brand" href="/art-factory">The Art Factory</a>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <ul id='navBar' className='navbar-nav ml-auto' >
