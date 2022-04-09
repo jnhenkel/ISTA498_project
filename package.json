@@ -1,5 +1,5 @@
 {
-  "homepage": "https://jnhenkel.github.io/ISTA498_project/",
+  "homepage": "https://jnhenkel.github.io/art-factory/",
   "name": "the-art-factory",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +13,7 @@
     "dotenv": "^16.0.0",
     "pg": "^8.7.3",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.2.1",
+    "react-bootstrap": "^2.2.3",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
