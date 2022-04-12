@@ -1,0 +1,186 @@
+import { React, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import users from '../data/data';
+/*
+questions
+    0
+        How creative are you?
+        1 (not at all), 5(very)
+    1
+        How organized are you?
+        1 (very), 5(not at all)
+    2
+        How outgoing are you?
+        1 (not at all), 5(very)
+    3
+        How easy going are you?
+        1 (not at all), 5(very)
+    4
+        How focused are you?
+        1 (very), 5(not at all)
+    5
+        How outdoorsy are you?
+        1 (not at all), 5(very)
+    6
+        How often do you take on leadership roles?
+        1 (never), 5(very often)
+    7
+        How often do you find yourself in stressful situations?
+        1 (very often), 5(never)
+    8
+        How adventurous are you?
+        1 (not at all), 5(very)
+    9
+        How timely are you?
+        1 (very), 5(heavy procrastinator) 
+
+answers
+    0,2,3,5,8
+        1 (not at all), 5(very)
+    1,4
+        1 (very), 5(not at all)
+    6
+        1 (never), 5(very often)
+    7
+        1 (very often), 5(never)
+    9
+        1 (very), 5(not at all) 
+*/
+const type = 'radio';
+
+const Quiz = (props) => {
+    const [questionCount, setQuestionCount] = useState(-1); /* start on undefined and set to 0 when quiz is started */
+    const [userAnswer, setUserAnswer] = useState(0);
+    const [submitted, setSubmitted] = useState(false);
+    const [score, setScore] = useState(0);
+
+    let questions = [
+        'How creative are you?',
+        'How organized are you?',
+        'How outgoing are you?',
+        'How easy going are you?',
+        'How focused are you?',
+        'How outdoorsy are you?',
+        'How often do you take on leadership roles?',
+        'How often do you find yourself in stressful situations?',
+        'How adventurous are you?',
+        'How timely are you?'
+    ];
+
+    let handleStartQuiz = (event) => {
+        event.preventDefault();
+        setQuestionCount(0);
+        setScore(0);
+        setUserAnswer(0);
+        setSubmitted(false);
+        console.log(event);
+    }
+
+    let handleContinue = (event) => {
+        event.preventDefault();
+        setQuestionCount(questionCount + 1);
+        setScore(score + userAnswer);
+    }
+
+    return (
+        <div className='container home'>
+            {
+                questionCount != -1 ?
+
+
+                    <Form>
+                        <Form.Group className='homeForm mx-auto' controlId='formBasicAnswer'>
+                            <Form.Label>{questions[questionCount]}</Form.Label>
+                        </Form.Group>
+                        <div key={`inline-${type}`} className="mb-3">
+                            { /* this is for the left hand quantifier for users */
+                                questionCount === 1 || questionCount === 4 || questionCount === 9 ?
+                                    <Form.Check inline className='questionRange'>(very)</Form.Check>
+                                    :
+                                    questionCount === 6 ?
+                                        <Form.Check inline className='questionRange'>(never)</Form.Check>
+                                        :
+                                        questionCount === 7 ?
+                                            <Form.Check inline className='questionRange'>(very often)</Form.Check>
+                                            :
+                                            <Form.Check inline className='questionRange'>(not at all)</Form.Check>
+                            }
+
+                            <Form.Check
+                                inline
+                                label="1"
+                                name="userChoice"
+                                type={type}
+                                id={`inline-${type}-1`}
+                                onChange={() => setUserAnswer(1)}
+                            />
+                            <Form.Check
+                                inline
+                                label="2"
+                                name="userChoice"
+                                type={type}
+                                id={`inline-${type}-2`}
+                                onChange={() => setUserAnswer(2)}
+                            />
+                            <Form.Check
+                                inline
+                                label="3"
+                                name="userChoice"
+                                type={type}
+                                id={`inline-${type}-3`}
+                                onChange={() => setUserAnswer(3)}
+                            />
+                            <Form.Check
+                                inline
+                                label="4"
+                                name="userChoice"
+                                type={type}
+                                id={`inline-${type}-4`}
+                                onChange={() => setUserAnswer(4)}
+                            />
+                            <Form.Check
+                                inline
+                                label="5"
+                                name="userChoice"
+                                type={type}
+                                id={`inline-${type}-5`}
+                                onChange={() => setUserAnswer(5)}
+                            />
+
+                            {/* this is for the right hand quantifier for users */
+                                questionCount === 1 || questionCount === 4 || questionCount === 9 ?
+                                    <Form.Check inline className='questionRange'>(not at all)</Form.Check>
+                                    :
+                                    questionCount === 6 ?
+                                        <Form.Check inline className='questionRange'>(very often)</Form.Check>
+                                        :
+                                        questionCount === 7 ?
+                                            <Form.Check inline className='questionRange'>(never)</Form.Check>
+                                            :
+                                            <Form.Check inline className='questionRange'>(very)</Form.Check>
+                            }
+
+                        </div>
+                        <div className='row'>
+                            <Button id='continueBtn' size='lg' variant='primary' onClick={handleContinue}>Continue</Button>
+                        </div>
+                    </Form>
+                    :
+                    <>
+                        <div className='row'>
+                            <div className='homeText'>To begin, we must ask you a series of questions...</div>
+                        </div>
+                        <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
+                        <div className='row'>
+                            <div className='reminder'>*As a reminder, you must register and login to have your art emailed to you</div>
+                        </div>
+                    </>
+            }
+        </div>
+    )
+}
+
+export default Quiz;
