@@ -11,11 +11,11 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
 
-    let HandleSubmit = (event) => {
-
-        //store.addCustomer(name, email, password );
-        useEffect(() => {
+    useEffect(() => {
+        let handleSubmit = (event) => {
             if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
+                //store.addCustomer(name, email, password );
+
                 fetch('/register', {
                     method: "POST",
                     headers: {
@@ -25,12 +25,12 @@ const Registration = () => {
                 })
                     .then(res => res.json())
                     .then(data => console.log(data))
-            }
-        }, [])
-        alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
-        navigate('/login');
 
-    }
+                alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
+                navigate('/login');
+            }
+        }
+    }, [])
     let handleEmail = (event) => {
         let val = event.target.value;
         const nameDiv = document.getElementById('emailDiv');
@@ -118,7 +118,7 @@ const Registration = () => {
                             <input type='password' name='password' id='password' autoComplete='current-password' value={password} onChange={handlePassword} />
                         </div>
                         <div className='row'>
-                            <Button id='submitRegister' size='lg' variant='primary' onClick={HandleSubmit}>Submit</Button>
+                            <Button id='submitRegister' size='lg' variant='primary' onClick={handleSubmit}>Submit</Button>
                         </div>
                     </div>
                 </form>
