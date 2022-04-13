@@ -11,7 +11,7 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
 
-    let handleSubmit = (event) => {
+    let HandleSubmit = (event) => {
 
         //store.addCustomer(name, email, password );
         useEffect(() => {
@@ -118,7 +118,7 @@ const Registration = () => {
                             <input type='password' name='password' id='password' autoComplete='current-password' value={password} onChange={handlePassword} />
                         </div>
                         <div className='row'>
-                            <Button id='submitRegister' size='lg' variant='primary' onClick={handleSubmit}>Submit</Button>
+                            <Button id='submitRegister' size='lg' variant='primary' onClick={HandleSubmit}>Submit</Button>
                         </div>
                     </div>
                 </form>
