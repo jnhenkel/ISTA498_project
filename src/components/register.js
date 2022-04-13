@@ -12,22 +12,24 @@ const Registration = () => {
     let navigate = useNavigate();
 
     let handleSubmit = (event) => {
-        if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
-            //store.addCustomer(name, email, password );
-            useEffect(() => {
+
+        //store.addCustomer(name, email, password );
+        useEffect(() => {
+            if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
                 fetch('/register', {
                     method: "POST",
                     headers: {
                         'Content-type': "application/json"
                     },
-                    body: JSON.stringify(email,name, password)
+                    body: JSON.stringify(email, name, password)
                 })
-                .then(res => res.json())
-                .then(data => console.log(data))
-            }, [])
-            alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
-            navigate('/login');
-        }
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+            }
+        }, [])
+        alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
+        navigate('/login');
+
     }
     let handleEmail = (event) => {
         let val = event.target.value;
