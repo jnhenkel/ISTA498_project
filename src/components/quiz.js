@@ -52,7 +52,7 @@ answers
 const type = 'radio';
 
 const Quiz = (props) => {
-    const [questionCount, setQuestionCount] = useState(-1); /* start on undefined and set to 0 when quiz is started */
+    const [questionCount, setQuestionCount] = useState(-1); /* start on -1 and set to 0 when quiz is started */
     const [userAnswer, setUserAnswer] = useState(0);
     const [submitted, setSubmitted] = useState(false);
     const [score, setScore] = useState(0);
@@ -76,7 +76,6 @@ const Quiz = (props) => {
         setScore(0);
         setUserAnswer(0);
         setSubmitted(false);
-        console.log(event);
     }
 
     let handleContinue = (event) => {
@@ -85,12 +84,15 @@ const Quiz = (props) => {
         setScore(score + userAnswer);
     }
 
+    let handleSubmitQuiz = (event) => {
+        event.preventDefault();
+        
+    }
+
     return (
         <div className='container home'>
             {
-                questionCount != -1 ?
-
-
+                questionCount != -1 && questionCount != 10 ?
                     <Form>
                         <Form.Group className='homeForm mx-auto' controlId='formBasicAnswer'>
                             <Form.Label>{questions[questionCount]}</Form.Label>
@@ -169,15 +171,25 @@ const Quiz = (props) => {
                         </div>
                     </Form>
                     :
-                    <>
-                        <div className='row'>
-                            <div className='homeText'>To begin, we must ask you a series of questions...</div>
-                        </div>
-                        <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
-                        <div className='row'>
-                            <div className='reminder'>*As a reminder, you must register and login to have your art emailed to you</div>
-                        </div>
-                    </>
+                    questionCount === -1 ?
+                        <>
+                            <div className='row'>
+                                <div className='homeText'>To begin, we must ask you a series of questions...</div>
+                            </div>
+                            <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
+                            <div className='row'>
+                                <div className='reminder'>*As a reminder, you must register and login to have your art emailed to you</div>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div className='row'>
+                                <div className='homeText'>Thank you for taking the quiz! <br/>Submit your quiz to view your art.</div>
+                            </div>{score}
+                            <div className='row'>
+                            <Button id='submitBtn' size='lg' variant='primary' onClick={handleSubmitQuiz}>Submit Quiz</Button>
+                            </div>
+                        </>
             }
         </div>
     )
