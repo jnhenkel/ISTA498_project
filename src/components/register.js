@@ -1,20 +1,30 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
-import store from '../data/store';
+import store from '../data/store_local';
 
 const Registration = () => {
     const [email, setEmail] = useState('');
-    const [firstName, setfirstName] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
 
     let handleSubmit = (event) => {
-        if (validateInputs(email, 'email') && validateInputs(firstName, 'name') && validateInputs(password, 'password')) {
-            store.addCustomer(firstName, email, password );
-            console.log(users);
+        if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
+            //store.addCustomer(name, email, password );
+            useEffect(() => {
+                fetch('/register', {
+                    method: "POST",
+                    headers: {
+                        'Content-type': "application/json"
+                    },
+                    body: JSON.stringify(email,name, password)
+                })
+                .then(res => res.json())
+                .then(data => console.log(data))
+            }, [])
             alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
             navigate('/login');
         }
@@ -25,11 +35,11 @@ const Registration = () => {
         nameDiv.setAttribute('style', 'border: 0');
         setEmail(val);
     }
-    let handlefirstName = (event) => {
+    let handleName = (event) => {
         let val = event.target.value;
         const nameDiv = document.getElementById('nameDiv');
         nameDiv.setAttribute('style', 'border: 0');
-        setfirstName(val);
+        setName(val);
     }
     let handlePassword = (event) => {
         let val = event.target.value;
@@ -98,8 +108,8 @@ const Registration = () => {
                             <input type='text' name='email' id='email' autoComplete='email' value={email} onChange={handleEmail} />
                         </div>
                         <div className='row register-inputs' id='nameDiv'>
-                            <label htmlFor='firstName' id='firstNameLabel'>First Name: </label>
-                            <input type='text' name='firstName' id='firstName' value={firstName} onChange={handlefirstName} />
+                            <label htmlFor='name' id='nameLabel'>First Name: </label>
+                            <input type='text' name='name' id='name' value={name} onChange={handleName} />
                         </div>
                         <div className='row register-inputs' id='passwordDiv'>
                             <label htmlFor='password' id='passwordLabel'>Password: </label>

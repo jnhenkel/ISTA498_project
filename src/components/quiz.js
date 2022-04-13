@@ -177,9 +177,9 @@ const Quiz = (props) => {
                                 <div className='homeText'>To begin, we must ask you a series of questions...</div>
                             </div>
                             <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
-                            <div className='row'>
+                            {/*<div className='row'>
                                 <div className='reminder'>*As a reminder, you must register and login to have your art emailed to you</div>
-                            </div>
+                        </div>*/}
                         </>
                         :
                         <>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
-import store from '../data/store';
+import store from '../data/store_local';
 
 
 const Login = (props) => {
