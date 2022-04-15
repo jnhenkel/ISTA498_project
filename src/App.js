@@ -23,16 +23,11 @@ function App() {
   return (
     <div id="app">
       <Helmet>
-      
-       <title>Art-Factory</title>
-       <script type="text/javascript" src="processing.js"></script>
-       
-      </Helmet>      
-     
-      <Router>
-      
-        <div id="blur">
+        <title>Art-Factory</title>
+      </Helmet>
 
+      <Router>
+        <div id="blur">
           <Navigation user={user} />
           <Disclaimer />
           <Routes>
