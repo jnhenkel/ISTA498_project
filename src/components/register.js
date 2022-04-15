@@ -33,14 +33,12 @@ const Registration = () => {
     }, [])
     */
     let handleSubmit = (event) => {
-        if (validateInputs(email, 'email') && validateInputs(firstName, 'name') && validateInputs(password, 'password')) {
-            store.addCustomer(firstName, email, password );
+        if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
+            store.addCustomer(name, email, password );
             console.log(users);
             alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
             navigate('/login');
         }
-        nameDiv.setAttribute('style', 'border: 0');
-        setEmail(val);
     }
     let handleEmail = (event) => {
         let val = event.target.value;
