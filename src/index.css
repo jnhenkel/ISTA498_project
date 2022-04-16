@@ -194,3 +194,7 @@ h2 {
     margin: auto;
     
 }
+.art {
+    display: flex;
+    justify-content: center;
+}

@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import users from '../data/data';
+import art from '../data/art';
+
 /*
 questions
     0
@@ -56,6 +58,7 @@ const Quiz = (props) => {
     const [userAnswer, setUserAnswer] = useState(0);
     const [submitted, setSubmitted] = useState(false);
     const [score, setScore] = useState(0);
+    const [artSource, setArtSource] = useState(undefined);
 
     let questions = [
         'How creative are you?',
@@ -86,112 +89,128 @@ const Quiz = (props) => {
 
     let handleSubmitQuiz = (event) => {
         event.preventDefault();
-        
+        setSubmitted(true);
+        setArtSource(art[0].url);
     }
 
     return (
+        <>
+        {
+            submitted ?
+            <div className='container '>
+                <div className='row'>
+                    <div className='col art'>
+            <iframe className='iframeDisplay' width="600" height="600" src={artSource}></iframe>
+            </div>
+            </div>
+            </div>
+        :
         <div className='container home'>
-            {
-                questionCount != -1 && questionCount != 10 ?
-                    <Form>
-                        <Form.Group className='homeForm mx-auto' controlId='formBasicAnswer'>
-                            <Form.Label>{questions[questionCount]}</Form.Label>
-                        </Form.Group>
-                        <div key={`inline-${type}`} className="mb-3">
-                            { /* this is for the left hand quantifier for users */
-                                questionCount === 1 || questionCount === 4 || questionCount === 9 ?
-                                    <Form.Check inline className='questionRange'>(very)</Form.Check>
-                                    :
-                                    questionCount === 6 ?
-                                        <Form.Check inline className='questionRange'>(never)</Form.Check>
+            
+            
+                {
+                    questionCount != -1 && questionCount != 10 ?
+                        <Form>
+                            <Form.Group className='homeForm mx-auto' controlId='formBasicAnswer'>
+                                <Form.Label>{questions[questionCount]}</Form.Label>
+                            </Form.Group>
+                            <div key={`inline-${type}`} className="mb-3">
+                                { /* this is for the left hand quantifier for users */
+                                    questionCount === 1 || questionCount === 4 || questionCount === 9 ?
+                                        <Form.Check inline className='questionRange'>(very)</Form.Check>
                                         :
-                                        questionCount === 7 ?
-                                            <Form.Check inline className='questionRange'>(very often)</Form.Check>
-                                            :
-                                            <Form.Check inline className='questionRange'>(not at all)</Form.Check>
-                            }
-
-                            <Form.Check
-                                inline
-                                label="1"
-                                name="userChoice"
-                                type={type}
-                                id={`inline-${type}-1`}
-                                onChange={() => setUserAnswer(1)}
-                            />
-                            <Form.Check
-                                inline
-                                label="2"
-                                name="userChoice"
-                                type={type}
-                                id={`inline-${type}-2`}
-                                onChange={() => setUserAnswer(2)}
-                            />
-                            <Form.Check
-                                inline
-                                label="3"
-                                name="userChoice"
-                                type={type}
-                                id={`inline-${type}-3`}
-                                onChange={() => setUserAnswer(3)}
-                            />
-                            <Form.Check
-                                inline
-                                label="4"
-                                name="userChoice"
-                                type={type}
-                                id={`inline-${type}-4`}
-                                onChange={() => setUserAnswer(4)}
-                            />
-                            <Form.Check
-                                inline
-                                label="5"
-                                name="userChoice"
-                                type={type}
-                                id={`inline-${type}-5`}
-                                onChange={() => setUserAnswer(5)}
-                            />
-
-                            {/* this is for the right hand quantifier for users */
-                                questionCount === 1 || questionCount === 4 || questionCount === 9 ?
-                                    <Form.Check inline className='questionRange'>(not at all)</Form.Check>
-                                    :
-                                    questionCount === 6 ?
-                                        <Form.Check inline className='questionRange'>(very often)</Form.Check>
-                                        :
-                                        questionCount === 7 ?
+                                        questionCount === 6 ?
                                             <Form.Check inline className='questionRange'>(never)</Form.Check>
                                             :
-                                            <Form.Check inline className='questionRange'>(very)</Form.Check>
-                            }
+                                            questionCount === 7 ?
+                                                <Form.Check inline className='questionRange'>(very often)</Form.Check>
+                                                :
+                                                <Form.Check inline className='questionRange'>(not at all)</Form.Check>
+                                }
 
-                        </div>
-                        <div className='row'>
-                            <Button id='continueBtn' size='lg' variant='primary' onClick={handleContinue}>Continue</Button>
-                        </div>
-                    </Form>
-                    :
-                    questionCount === -1 ?
-                        <>
-                            <div className='row'>
-                                <div className='homeText'>To begin, we must ask you a series of questions...</div>
+                                <Form.Check
+                                    inline
+                                    label="1"
+                                    name="userChoice"
+                                    type={type}
+                                    id={`inline-${type}-1`}
+                                    onChange={() => setUserAnswer(1)}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="2"
+                                    name="userChoice"
+                                    type={type}
+                                    id={`inline-${type}-2`}
+                                    onChange={() => setUserAnswer(2)}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="3"
+                                    name="userChoice"
+                                    type={type}
+                                    id={`inline-${type}-3`}
+                                    onChange={() => setUserAnswer(3)}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="4"
+                                    name="userChoice"
+                                    type={type}
+                                    id={`inline-${type}-4`}
+                                    onChange={() => setUserAnswer(4)}
+                                />
+                                <Form.Check
+                                    inline
+                                    label="5"
+                                    name="userChoice"
+                                    type={type}
+                                    id={`inline-${type}-5`}
+                                    onChange={() => setUserAnswer(5)}
+                                />
+
+                                {/* this is for the right hand quantifier for users */
+                                    questionCount === 1 || questionCount === 4 || questionCount === 9 ?
+                                        <Form.Check inline className='questionRange'>(not at all)</Form.Check>
+                                        :
+                                        questionCount === 6 ?
+                                            <Form.Check inline className='questionRange'>(very often)</Form.Check>
+                                            :
+                                            questionCount === 7 ?
+                                                <Form.Check inline className='questionRange'>(never)</Form.Check>
+                                                :
+                                                <Form.Check inline className='questionRange'>(very)</Form.Check>
+                                }
+
                             </div>
-                            <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
-                            {/*<div className='row'>
+                            <div className='row'>
+                                <Button id='continueBtn' size='lg' variant='primary' onClick={handleContinue}>Continue</Button>
+                            </div>
+                        </Form>
+                        :
+                        questionCount === -1 ?
+                            <>
+                                <div className='row'>
+                                    <div className='homeText'>To begin, we must ask you a series of questions...</div>
+                                </div>
+                                <Button id='startBtn' size='lg' variant='primary' onClick={handleStartQuiz}>Start Quiz</Button>
+                                {/*<div className='row'>
                                 <div className='reminder'>*As a reminder, you must register and login to have your art emailed to you</div>
                         </div>*/}
-                        </>
-                        :
-                        <>
-                            <div className='row'>
-                                <div className='homeText'>Thank you for taking the quiz! <br/>Submit your quiz to view your art.</div>
-                            </div>{score}
-                            <div className='row'>
-                            <Button id='submitBtn' size='lg' variant='primary' onClick={handleSubmitQuiz}>Submit Quiz</Button>
-                            </div>
-                        </>
-            }
-        </div>
+                            </>
+                            :
+                            <>
+                                <div className='row'>
+                                    <div className='homeText'>Thank you for taking the quiz! <br />Submit your quiz to view your art.</div>
+                                </div>{score}
+                                <div className='row'>
+                                    <Button id='submitBtn' size='lg' variant='primary' onClick={handleSubmitQuiz}>Submit Quiz</Button>
+                                </div>
+                            </>
+                }
+            </div>
+}
+</>
     )
 }
 
