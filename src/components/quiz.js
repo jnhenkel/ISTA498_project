@@ -89,8 +89,11 @@ const Quiz = (props) => {
 
     let handleSubmitQuiz = (event) => {
         event.preventDefault();
+        if (score > 9 && score < 16) {
+            let i = Math.floor(Math.random()*8);
+            setArtSource(art[i].url);
+        }
         setSubmitted(true);
-        setArtSource(art[0].url);
     }
 
     return (
