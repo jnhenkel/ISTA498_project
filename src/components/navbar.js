@@ -22,8 +22,8 @@ const Navigation = (props) => {
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' to='/services'>
-                                    Services
+                                <NavLink className='nav-link' to='/quiz'>
+                                    Quiz
                                 </NavLink>
                             </li>
                             {

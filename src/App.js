@@ -37,7 +37,7 @@ function App() {
             <Route path='/signup' element={<Registration />} />
             <Route path='/login' element={<Login userLoggedIn={handleLogin} />} />
             <Route path='/discover' element={<Draw />} />
-            <Route path='/services' element={<Quiz />} />
+            <Route path='/quiz' element={<Quiz />} />
           </Routes>
         </div>
       </Router>
