@@ -90,9 +90,24 @@ const Quiz = (props) => {
     let handleSubmitQuiz = (event) => {
         event.preventDefault();
         if (score > 9 && score < 16) {
-            let i = Math.floor(Math.random()*8);
-            setArtSource(art[i].url);
+            var indexes = [0,1,2,3,4,5,6];
+        } else if (score > 15 && score < 21) {
+            var indexes = [7,8,9,10,11,12];
+        } else if (score > 20 && score < 26) {
+            var indexes = [13,14,15,16,17,18];
+        } else if (score > 25 && score < 31) {
+            var indexes = [19,20,21,22,23,24];
+        } else if (score > 30 && score < 36) {
+            var indexes = [25,26,27,28,29,30];
+        } else if (score > 35 && score < 41) {
+            var indexes = [31,32,33,34,35,36];
+        } else if (score > 40 && score < 46) {
+            var indexes = [37,38,39,40,41,42];
+        } else {
+            var indexes = [43,44,45,46,47,48,49,50];
         }
+        let i = indexes[Math.floor(Math.random()* indexes.length)];
+        setArtSource(art[i].url);
         setSubmitted(true);
     }
 
@@ -103,7 +118,7 @@ const Quiz = (props) => {
             <div className='container '>
                 <div className='row'>
                     <div className='col art'>
-            <iframe className='iframeDisplay' width="600" height="600" src={artSource}></iframe>
+            <iframe className='iframeDisplay' width="600" height="640" src={artSource}></iframe>
             </div>
             </div>
             </div>
