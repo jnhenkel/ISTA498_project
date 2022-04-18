@@ -130,7 +130,7 @@ const Quiz = (props) => {
                     questionCount != -1 && questionCount != 10 ?
                         <Form>
                             <Form.Group className='homeForm mx-auto' controlId='formBasicAnswer'>
-                                <Form.Label>{questions[questionCount]}</Form.Label>
+                                <Form.Label className='quizQuestionText'>{questions[questionCount]}</Form.Label>
                             </Form.Group>
                             <div key={`inline-${type}`} className="mb-3">
                                 { /* this is for the left hand quantifier for users */
@@ -150,6 +150,7 @@ const Quiz = (props) => {
                                     inline
                                     label="1"
                                     name="userChoice"
+                                    className="userChoice"
                                     type={type}
                                     id={`inline-${type}-1`}
                                     onChange={() => setUserAnswer(1)}
@@ -158,6 +159,7 @@ const Quiz = (props) => {
                                     inline
                                     label="2"
                                     name="userChoice"
+                                    className="userChoice"
                                     type={type}
                                     id={`inline-${type}-2`}
                                     onChange={() => setUserAnswer(2)}
@@ -166,6 +168,7 @@ const Quiz = (props) => {
                                     inline
                                     label="3"
                                     name="userChoice"
+                                    className="userChoice"
                                     type={type}
                                     id={`inline-${type}-3`}
                                     onChange={() => setUserAnswer(3)}
@@ -174,6 +177,7 @@ const Quiz = (props) => {
                                     inline
                                     label="4"
                                     name="userChoice"
+                                    className="userChoice"
                                     type={type}
                                     id={`inline-${type}-4`}
                                     onChange={() => setUserAnswer(4)}
@@ -182,6 +186,7 @@ const Quiz = (props) => {
                                     inline
                                     label="5"
                                     name="userChoice"
+                                    className="userChoice"
                                     type={type}
                                     id={`inline-${type}-5`}
                                     onChange={() => setUserAnswer(5)}
