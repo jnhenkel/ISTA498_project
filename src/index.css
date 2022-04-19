@@ -155,11 +155,11 @@ h2 {
 }
 .home {
     text-align: center;
-    background-image: linear-gradient(90deg,#004E7C 100%, #00FFFF 0%);
+    background-image: linear-gradient(#004E7C 100%, #B73225  0%);
     height: 420px;
     border-radius: 30px;
     margin: 40px 0 10px 0;
-    max-width: 500px;
+    max-width: 1000px !important;
     min-width: 350px;
 }
 .homeText, .quizQuestionText {
