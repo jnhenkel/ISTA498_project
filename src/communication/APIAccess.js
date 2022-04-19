@@ -30,3 +30,5 @@ let apiAccess = {
         })
     }
 }
+
+export default apiAccess;
