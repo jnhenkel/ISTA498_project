@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
 import store from '../data/store_local';
+import apiAccess from '../communication/APIAccess';
 
 
 const Login = (props) => {
@@ -19,14 +20,20 @@ const Login = (props) => {
     }
 
     let handleSubmit = (event) => {
-        let search = store.findUserInfo(email, password);
-        if (search) {
-            alert('Login successful');
-            props.userLoggedIn(email);
-            navigate('/index');
-        } else {
-            alert('Invalid credentials. Please try again.');
-        }
+        apiAccess.findUserInfo(email, password)
+        .then(x =>{
+            if (x.done) {
+                alert('Login successful');
+                props.userLoggedIn(email);
+                navigate('/index');
+            }else {
+                alert('Invalid credentials. Please try again.');
+            }
+        })
+        .catch(e => {
+            console.log(e);
+            alert('Something went wrong');
+        });
         event.preventDefault();
     }
 

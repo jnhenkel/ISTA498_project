@@ -4,6 +4,7 @@ import '../index.css';
 import Button from 'react-bootstrap/Button';
 import users from '../data/data';
 import store from '../data/store_local';
+import apiAccess from '../communication/APIAccess';
 
 const Registration = () => {
     const [email, setEmail] = useState('');
@@ -34,10 +35,15 @@ const Registration = () => {
     */
     let handleSubmit = (event) => {
         if (validateInputs(email, 'email') && validateInputs(name, 'name') && validateInputs(password, 'password')) {
-            store.addCustomer(name, email, password );
-            console.log(users);
-            alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
-            navigate('/login');
+            apiAccess.addCustomer(name, email, password )
+            .then(x => {
+                alert(`Thank you for signing up! \nYou will now be redirected to the login page. `);
+                navigate('/login');
+            })
+            .catch(e => {
+                console.log(e);
+                alert('Registration failed.');
+            });
         }
     }
     let handleEmail = (event) => {
