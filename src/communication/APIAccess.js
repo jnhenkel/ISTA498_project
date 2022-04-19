@@ -6,7 +6,8 @@ let apiAccess = {
             method: 'POST',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': backendAddress
             },
             body: JSON.stringify({firstName, email, password})
         })
@@ -21,7 +22,8 @@ let apiAccess = {
             method: 'POST',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': backendAddress
             },
             body: JSON.stringify({email, password})
         })
