@@ -4,6 +4,7 @@ let apiAccess = {
     addCustomer: (firstName, email, password) => {
         return fetch(`${backendAddress}/register`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -18,6 +19,7 @@ let apiAccess = {
     findUserInfo: (email, password) => {
         return fetch(`${backendAddress}/login`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
