@@ -1,4 +1,4 @@
-let backendAddress = "https://art-factory-api.herokuapp.com/";
+let backendAddress = "https://art-factory-api.herokuapp.com";
 
 let apiAccess = {
     addCustomer: (firstName, email, password) => {
