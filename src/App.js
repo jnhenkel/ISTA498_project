@@ -34,7 +34,7 @@ function App() {
             <Route path='/art-factory' element={<About />} />
             <Route path='/' element={<About />} />
             <Route path='/about' element={<About />} />
-            <Route path='/signup' element={<Registration />} />
+            <Route path='/register' element={<Registration />} />
             <Route path='/login' element={<Login userLoggedIn={handleLogin} />} />
             <Route path='/discover' element={<Draw />} />
             <Route path='/quiz' element={<Quiz />} />
