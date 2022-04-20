@@ -8,7 +8,7 @@ let apiAccess = {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${frontendAddress}/register`
+                'Access-Control-Allow-Origin': `${frontendAddress}/signup`
             },
             body: JSON.stringify({firstName, email, password})
         })
