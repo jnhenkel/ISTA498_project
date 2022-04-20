@@ -25,7 +25,6 @@ function App() {
       <Helmet>
         <title>Art-Factory</title>
       </Helmet>
-
       <Router>
         <div id="blur">
           <Navigation user={user} />
