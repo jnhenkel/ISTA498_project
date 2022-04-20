@@ -14,17 +14,17 @@ let apiAccess = {
         })
         .then(x => x.json())
         .then(x => {
-            console.log(x);
+            console.log('x:',x);
             return x;
         });
     },
     findUserInfo: (email, password) => {
-        return fetch(`${frontendAddress}/login`, {
+        return fetch(`${backendAddress}/login`, {
             method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${backendAddress}/login`
+                'Access-Control-Allow-Origin': `${frontendAddress}/login`
             },
             body: JSON.stringify({email, password})
         })
