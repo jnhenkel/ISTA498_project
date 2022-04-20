@@ -17,13 +17,13 @@ const Navigation = (props) => {
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' to='/discover'>
-                                    Discover
+                                <NavLink className='nav-link' to='/quiz'>
+                                    Quiz
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' to='/quiz'>
-                                    Quiz
+                                <NavLink className='nav-link' to='/discover'>
+                                    Discover
                                 </NavLink>
                             </li>
                             {
