@@ -5,10 +5,8 @@ let apiAccess = {
     addCustomer: (firstName, email, password) => {
         return fetch(`${backendAddress}/register`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${frontendAddress}/signup`
             },
             body: JSON.stringify({firstName, email, password})
         })
@@ -22,10 +20,8 @@ let apiAccess = {
     findUserInfo: (email, password) => {
         return fetch(`${backendAddress}/login`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${frontendAddress}`
             },
             body: JSON.stringify({email, password})
         })
@@ -39,10 +35,8 @@ let apiAccess = {
     postScore: (email, score) => {
         return fetch(`${backendAddress}/score`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${frontendAddress}/quiz`
             },
             body: JSON.stringify({email, score})
         })
