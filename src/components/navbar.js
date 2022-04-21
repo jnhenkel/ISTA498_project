@@ -1,8 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate} from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 
 const Navigation = (props) => {
+    let navigate = useNavigate();
+
     return (
         <div className='navigation'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -17,7 +19,7 @@ const Navigation = (props) => {
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' to='/quiz'>
+                                <NavLink className='nav-link' onClick={() => navigate('/quiz')}>
                                     Quiz
                                 </NavLink>
                             </li>
