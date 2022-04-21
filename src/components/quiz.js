@@ -63,7 +63,7 @@ const Quiz = (props) => {
     
 
     useEffect(() => {
-        console.log('from effect:', sendscore);
+        console.log('from effect:', sendScore);
         apiAccess.postScore(props.user, score)
         .then(x => {
             console.log(x);
