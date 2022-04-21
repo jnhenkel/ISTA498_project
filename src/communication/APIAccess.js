@@ -8,7 +8,7 @@ let apiAccess = {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${backendAddress}/signup`
+                'Access-Control-Allow-Origin': `${frontendAddress}/signup`
             },
             body: JSON.stringify({firstName, email, password})
         })
@@ -25,7 +25,7 @@ let apiAccess = {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${backendAddress}/login`
+                'Access-Control-Allow-Origin': `${frontendAddress}/login`
             },
             body: JSON.stringify({email, password})
         })
@@ -42,7 +42,7 @@ let apiAccess = {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${backendAddress}/score`
+                'Access-Control-Allow-Origin': `${frontendAddress}/score`
             },
             body: JSON.stringify({email, score})
         })
