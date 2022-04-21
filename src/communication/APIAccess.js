@@ -18,6 +18,7 @@ let apiAccess = {
             return x;
         });
     },
+
     findUserInfo: (email, password) => {
         return fetch(`${backendAddress}/login`, {
             method: 'POST',
@@ -30,6 +31,21 @@ let apiAccess = {
         })
         .then(x => x.json())
         .then(x=> {
+            console.log(x);
+            return x;
+        })
+    },
+
+    postScore: (email, score) => {
+        return fetch(`${backendAddress}/score`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email,score})
+        })
+        .then(x => x.json())
+        .then(x => {
             console.log(x);
             return x;
         })

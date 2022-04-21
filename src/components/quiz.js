@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import users from '../data/data';
 import art from '../data/art';
+import apiAccess from '../communication/APIAccess';
 
 /*
 questions
@@ -109,6 +109,19 @@ const Quiz = (props) => {
         let i = indexes[Math.floor(Math.random()* indexes.length)];
         setArtSource(art[i].url);
         setSubmitted(true);
+        return postScore();
+    }
+
+    let postScore = () => {
+        apiAccess.postScore(props.user, score)
+        .then(x => {
+            console.log(x);
+            alert('Score submitted.');
+        })
+        .catch(e => {
+            console.log(e);
+            alert('An error occured posting score.');
+        })
     }
 
     return (

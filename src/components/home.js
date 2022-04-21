@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import users from '../data/data';
+
 /*
 How creative are you?
 1 (not at all), 5(very)

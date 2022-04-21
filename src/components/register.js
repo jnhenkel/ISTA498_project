@@ -2,8 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Button from 'react-bootstrap/Button';
-import users from '../data/data';
-import store from '../data/store_local';
 import apiAccess from '../communication/APIAccess';
 
 const Registration = () => {
