@@ -25,7 +25,7 @@ let apiAccess = {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': `${frontendAddress}/login`
+                'Access-Control-Allow-Origin': `${frontendAddress}`
             },
             body: JSON.stringify({email, password})
         })
