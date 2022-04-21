@@ -195,7 +195,7 @@ h2 {
     margin: auto;
     margin-top: 30px;
 }
-#continueBtn, #submitBtn, #startBtn {
+#continueBtn, #submitBtn, #startBtn, #naviBtn {
     width: 250px;
     margin: auto;
     margin-top: 30px;
@@ -203,4 +203,7 @@ h2 {
 .art {
     display: flex;
     justify-content: center;
+}
+#naviBtn {
+    margin: 70px 20px 0px 20px;
 }

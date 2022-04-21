@@ -14,7 +14,7 @@ let apiAccess = {
         })
         .then(x => x.json())
         .then(x => {
-            console.log('x:',x);
+            //console.log('x:',x);
             return x;
         });
     },
@@ -31,7 +31,7 @@ let apiAccess = {
         })
         .then(x => x.json())
         .then(x=> {
-            console.log(x);
+            //console.log(x);
             return x;
         })
     },
@@ -48,7 +48,7 @@ let apiAccess = {
         })
         .then(x => x.json())
         .then(x => {
-            console.log(x);
+            //console.log(x);
             return x;
         })
     }
