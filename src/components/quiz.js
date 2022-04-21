@@ -62,13 +62,13 @@ const Quiz = (props) => {
     const [artSource, setArtSource] = useState(undefined);
 
     let location = useLocation(); //gets state
-    console.log('state: ', location.state);
-    console.log('user: ', props.user);
+    //console.log('state: ', location.state);
+    //console.log('user: ', props.user);
 
     let navigate = useNavigate();
 
     useEffect(() => {
-        console.log('from effect:', sendScore);
+        //console.log('from effect:', sendScore);
         if (!sendScore) {
             return
         }
