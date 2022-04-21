@@ -60,6 +60,7 @@ const Quiz = (props) => {
     const [sendScore, setSendScore] = useState(false);
     const [score, setScore] = useState(0);
     const [artSource, setArtSource] = useState(undefined);
+    console.log('user: ',props.user);
     
 
     useEffect(() => {
