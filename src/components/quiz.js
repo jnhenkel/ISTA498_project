@@ -88,7 +88,6 @@ const Quiz = (props) => {
     }
 
     let handleSubmitQuiz = (event) => {
-        event.preventDefault();
         if (score > 9 && score < 16) {
             var indexes = [0,1,2,3,4,5,6];
         } else if (score > 15 && score < 21) {
