@@ -39,6 +39,7 @@ let apiAccess = {
     postScore: (email, score) => {
         return fetch(`${backendAddress}/score`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },

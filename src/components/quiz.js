@@ -240,7 +240,7 @@ const Quiz = (props) => {
                                     <div className='homeText'>Thank you for taking the quiz! <br />Submit your quiz to view your art.</div>
                                 </div>{score}
                                 <div className='row'>
-                                    <Button id='submitBtn' size='lg' variant='primary' onClick={handleSubmitQuiz}>Submit Quiz</Button>
+                                    <Button id='submitBtn' size='lg' variant='primary' onClick={() => handleSubmitQuiz()}>Submit Quiz</Button>
                                 </div>
                             </>
                 }
