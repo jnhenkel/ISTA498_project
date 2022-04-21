@@ -19,7 +19,7 @@ const Navigation = (props) => {
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' onClick={() => navigate('/quiz')}>
+                                <NavLink className='nav-link' to='/quiz' state={{user: props.user}}>
                                     Quiz
                                 </NavLink>
                             </li>

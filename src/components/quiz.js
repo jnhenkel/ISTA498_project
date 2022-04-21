@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -57,15 +57,21 @@ const Quiz = (props) => {
     const [questionCount, setQuestionCount] = useState(-1); /* start on -1 and set to 0 when quiz is started */
     const [userAnswer, setUserAnswer] = useState(0);
     const [submitted, setSubmitted] = useState(false);
-    const [sendScore, setSendScore] = useState(false);
+    const [sendScore, setSendScore] = useState(undefined);
     const [score, setScore] = useState(0);
     const [artSource, setArtSource] = useState(undefined);
+    let location = useLocation();
+    console.log('state: ',location.state);
     console.log('user: ',props.user);
+
     
 
     useEffect(() => {
         console.log('from effect:', sendScore);
-        apiAccess.postScore(props.user, score)
+        if (!sendScore) {
+            return
+        }
+        apiAccess.postScore(location.state.user, score)
         .then(x => {
             console.log(x);
             alert('Score submitted.');
