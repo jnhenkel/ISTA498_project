@@ -60,8 +60,10 @@ const Quiz = (props) => {
     const [sendScore, setSendScore] = useState(false);
     const [score, setScore] = useState(0);
     const [artSource, setArtSource] = useState(undefined);
+    
 
     useEffect(() => {
+        console.log('from effect:', sendscore);
         apiAccess.postScore(props.user, score)
         .then(x => {
             console.log(x);
@@ -121,6 +123,7 @@ const Quiz = (props) => {
         let i = indexes[Math.floor(Math.random()* indexes.length)];
         setArtSource(art[i].url);
         setSubmitted(true);
+        console.log('inside handlesubmitquiz: ',sendScore);
         setSendScore(true);
     }
 
