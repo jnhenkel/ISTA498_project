@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/art-factory/static/css/main.8195c2dc.css",
-    "main.js": "/art-factory/static/js/main.4ac8f58a.js",
+    "main.js": "/art-factory/static/js/main.dddbaa28.js",
     "index.html": "/art-factory/index.html",
     "main.8195c2dc.css.map": "/art-factory/static/css/main.8195c2dc.css.map",
-    "main.4ac8f58a.js.map": "/art-factory/static/js/main.4ac8f58a.js.map"
+    "main.dddbaa28.js.map": "/art-factory/static/js/main.dddbaa28.js.map"
   },
   "entrypoints": [
     "static/css/main.8195c2dc.css",
-    "static/js/main.4ac8f58a.js"
+    "static/js/main.dddbaa28.js"
   ]
 }
