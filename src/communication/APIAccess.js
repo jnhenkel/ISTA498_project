@@ -43,7 +43,7 @@ let apiAccess = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email,score})
+            body: JSON.stringify({email, score})
         })
         .then(x => x.json())
         .then(x => {

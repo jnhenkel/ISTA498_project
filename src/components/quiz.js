@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -57,8 +57,21 @@ const Quiz = (props) => {
     const [questionCount, setQuestionCount] = useState(-1); /* start on -1 and set to 0 when quiz is started */
     const [userAnswer, setUserAnswer] = useState(0);
     const [submitted, setSubmitted] = useState(false);
+    const [sendScore, setSendScore] = useState(false);
     const [score, setScore] = useState(0);
     const [artSource, setArtSource] = useState(undefined);
+
+    useEffect(() => {
+        apiAccess.postScore(props.user, score)
+        .then(x => {
+            console.log(x);
+            alert('Score submitted.');
+        })
+        .catch(e => {
+            console.log(e);
+            alert('An error occured posting score.');
+        })
+    }, [sendScore])
 
     let questions = [
         'How creative are you?',
@@ -108,10 +121,10 @@ const Quiz = (props) => {
         let i = indexes[Math.floor(Math.random()* indexes.length)];
         setArtSource(art[i].url);
         setSubmitted(true);
-        postScore();
+        setSendScore(true);
     }
 
-    let postScore = () => {
+    /*let postScore = () => {
         return apiAccess.postScore(props.user, score)
         .then(x => {
             console.log(x);
@@ -121,7 +134,7 @@ const Quiz = (props) => {
             console.log(e);
             alert('An error occured posting score.');
         })
-    }
+    }*/
 
     return (
         <>
