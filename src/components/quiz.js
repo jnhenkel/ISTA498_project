@@ -109,11 +109,11 @@ const Quiz = (props) => {
         let i = indexes[Math.floor(Math.random()* indexes.length)];
         setArtSource(art[i].url);
         setSubmitted(true);
-        return postScore();
+        postScore();
     }
 
     let postScore = () => {
-        apiAccess.postScore(props.user, score)
+        return apiAccess.postScore(props.user, score)
         .then(x => {
             console.log(x);
             alert('Score submitted.');
