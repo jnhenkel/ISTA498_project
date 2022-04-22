@@ -25,6 +25,17 @@ body {
 .nav-link {
     color:   rgb(35, 134, 201) !important;
 }
+.nav-link2 {
+    color:   rgb(35, 134, 201) !important;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar2 {
+    width: 25%;
+    margin: auto;
+    
+}
 .modalTitle {
     color:red;
     font-size: 32px !important;

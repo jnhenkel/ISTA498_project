@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
-import { useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate, NavLink } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -265,7 +266,7 @@ const Quiz = (props) => {
                                                 <>
                                                     <div className='row'>
                                                         <div className='homeText'>Thank you for taking the quiz! <br />Submit your quiz to view your art.</div>
-                                                    </div>{score}
+                                                    </div>
                                                     <div className='row'>
                                                         <Button id='submitBtn' size='lg' variant='primary' onClick={() => handleSubmitQuiz()}>Submit Quiz</Button>
                                                     </div>
