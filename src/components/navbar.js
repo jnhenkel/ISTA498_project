@@ -24,7 +24,7 @@ const Navigation = (props) => {
                                 </NavLink>
                             </li>
                             <li className='nav-item mx-2'>
-                                <NavLink className='nav-link' to='/discover'>
+                                <NavLink className='nav-link' to='/discover' state={{user: props.user}}>
                                     Discover
                                 </NavLink>
                             </li>

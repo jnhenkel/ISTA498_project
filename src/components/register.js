@@ -109,10 +109,9 @@ const Registration = () => {
             <div className='register-text'>
                 <h2>Register to enable features of our application like:</h2>
                 <ul>
-                    <li>Save your quiz answers so you can quickly remake art</li>
-                    <li>Get the art you make emailed directly to you</li>
-                    <li>Revisit previously generated art</li>
-
+                    <li>Automatic saving so you can quickly remake art</li>
+                    <li>Revisit previously generated art and scores</li>
+                    <li>Visit the Discover page to see previous entries</li>
                 </ul>
             </div>
             <div id='registerForm'>

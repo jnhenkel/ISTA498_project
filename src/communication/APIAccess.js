@@ -36,7 +36,7 @@ let apiAccess = {
         })
     },
 
-    postScore: (email, score) => {
+    postScore: (email, score, art_url) => {
         return fetch(`${backendAddress}/score`, {
             method: 'POST',
             
@@ -44,11 +44,20 @@ let apiAccess = {
                 'Content-Type': 'application/json',
                 
             },
-            body: JSON.stringify({email, score})
+            body: JSON.stringify({email, score, art_url})
         })
         .then(x => x.json())
         .then(x => {
             //console.log(x);
+            return x;
+        })
+    },
+
+    getScore: (email) => {
+        return fetch(`${backendAddress}/score/${email}`)
+        .then(x => x.json())
+        .then(x => {
+            console.log('from getscore: ', x);
             return x;
         })
     }

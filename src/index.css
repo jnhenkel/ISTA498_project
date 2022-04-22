@@ -68,7 +68,7 @@ body {
     margin-top: 40px;
     background-color: transparent;
 }
-#registerForm {
+#registerForm, .loginPrompt{
     background-image: linear-gradient(90deg,#5C5F58 100%, #00FFFF 0%);
     height: 420px;
     border-radius: 30px;
@@ -156,6 +156,14 @@ h2 {
 .home {
     text-align: center;
     background-image: linear-gradient(#004E7C 100%, #B73225  0%);
+    height: 420px;
+    border-radius: 30px;
+    margin: 40px 0 10px 0;
+    max-width: 1000px !important;
+    min-width: 350px;
+}
+.loginPrompt {
+    text-align: center;
     height: 420px;
     border-radius: 30px;
     margin: 40px 0 10px 0;

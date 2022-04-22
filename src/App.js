@@ -7,7 +7,7 @@ import Registration from './components/register';
 import Login from './components/login';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Draw from './components/draw';
+import Discover from './components/discover';
 import Home from './components/home';
 import Services from './components/services';
 import Quiz from './components/quiz';
@@ -35,7 +35,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Registration />} />
             <Route path='/login' element={<Login userLoggedIn={handleLogin} />} />
-            <Route path='/discover' element={<Draw />} />
+            <Route path='/discover' element={<Discover />} />
             <Route path='/quiz' element={<Quiz />} user={user} key="quiz_key" />
           </Routes>
         </div>

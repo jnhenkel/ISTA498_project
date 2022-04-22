@@ -72,7 +72,7 @@ const Quiz = (props) => {
         if (!sendScore) {
             return
         }
-        apiAccess.postScore(location.state.user, score)
+        apiAccess.postScore(location.state.user, score, sendScore)
             .then(x => {
                 //console.log(x);
                 alert('Score submitted.');
@@ -131,8 +131,7 @@ const Quiz = (props) => {
         let i = indexes[Math.floor(Math.random() * indexes.length)];
         setArtSource(art[i].url);
         setSubmitted(true);
-        console.log('inside handlesubmitquiz: ', sendScore);
-        setSendScore(true);
+        setSendScore(art[i].url);
     }
 
 
