@@ -24,7 +24,16 @@ function About() {
             Learning technology through arts is another great way to understand the internet and the computing systems that come with it.
           </div>
           <div class="about-paragraph2">
-            Our project involves a user answering a short question to begin the pre-existing algorithm selection that will then be used to develop and generate digital art. A website will be created by the group that displays the art using a pre-existing algorithm and gives the user a chance to have the art redone by answering questions after that. We will run the user through different algorithms based on them approving or declining what they see and produce a final piece of art. Then, we take user feedback that either approves or disapproves of the art they see; if approved the program gives the user an export feature, if disapproved the program will change the algorithm to generate a new piece of art and get user feedback again.
+            Our project involves a user answering a short questionaire to begin the pre-existing algorithm selection that will then be used to develop and generate digital art. 
+            This website displays the art using a pre-existing algorithm and gives the user a chance to have the art redone by answering questions after that. 
+            We will run the user through different algorithms based on the results of each quiz taken and produce a final piece of art. 
+            <br/><br/>
+            The art generated in this site was made using p5.js, a JavaScript library built for creative coding.
+            For more information abot p5.js visit <a href="https://p5js.org/">https://p5js.org/.</a>
+            <br/><br/>
+            To begin using the application, please register! Then, you can login and take the quiz. 
+            <br/>
+            **Your information will never be shared.
           </div>
         </div>
       </div>
