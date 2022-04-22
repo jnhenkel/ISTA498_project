@@ -8,8 +8,6 @@ import Login from './components/login';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Discover from './components/discover';
-import Home from './components/home';
-import Services from './components/services';
 import Quiz from './components/quiz';
 
 

@@ -37,7 +37,6 @@ function About() {
           </div>
         </div>
       </div>
-      <canvas data-processing-sources="../test.pde"></canvas>
     </div>
   );
 }
