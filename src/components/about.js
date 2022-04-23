@@ -15,7 +15,7 @@ function About() {
         </div>
         <div class="row about-text">
           <div class="about-paragraph1">
-            <span>The question we want to have answered is </span>
+            <span>The question that inspired this project is </span>
             <br />
             <span class="question-text">
               Why aren't there more routes of creativity in the arts online?
@@ -24,9 +24,9 @@ function About() {
             Learning technology through arts is another great way to understand the internet and the computing systems that come with it.
           </div>
           <div class="about-paragraph2">
-            Our project involves a user answering a short questionaire to begin the pre-existing algorithm selection that will then be used to develop and generate digital art. 
+            This project involves a user answering a short questionaire to begin the pre-existing algorithm selection that will then be used to develop and generate digital art. 
             This website displays the art using a pre-existing algorithm and gives the user a chance to have the art redone by answering questions after that. 
-            We will run the user through different algorithms based on the results of each quiz taken and produce a final piece of art. 
+            Based on the results of each quiz taken, this application runs the user through different algorithms to produce a different pieces of art. 
             <br/><br/>
             The art generated in this site was made using p5.js, a JavaScript library built for creative coding.
             For more information abot p5.js visit <a href="https://p5js.org/">https://p5js.org/.</a>

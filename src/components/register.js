@@ -107,7 +107,7 @@ const Registration = () => {
         <div className='container' id='register'>
             <h1 className='container'></h1>
             <div className='register-text'>
-                <h2>Register to enable features of our application like:</h2>
+                <h2>Register to enable features like:</h2>
                 <ul>
                     <li>Automatic saving so you can quickly remake art</li>
                     <li>Revisit previously generated art and scores</li>
