@@ -279,7 +279,7 @@ const Quiz = (props) => {
                     
                     <div className='container home'>
                         <div className='row'>
-                            <div className='homeText'>In order to take our quiz, <br/>you must be registered and logged in.</div>
+                            <div className='homeText'>In order to take the quiz, <br/>you must be registered and logged in.</div>
                         </div>
                         <Button id='naviBtn' size='lg' variant='warning' onClick={() => navigate('/signup')}>Register</Button>
                         <Button id='naviBtn' size='lg' variant='warning' onClick={() => navigate('/login')}>Log In</Button>
